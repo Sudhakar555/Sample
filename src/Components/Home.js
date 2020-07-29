@@ -31,6 +31,7 @@ export default class Home extends React.Component{
        return(
         <section>
           
+          <h1>Sample Json Display</h1>
         {jsonDisplay}
 
         </section>
