@@ -1,15 +1,64 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{Component} from 'react';
 import './App.css';
-import FormComponent from './Components/Form'
-function App() {
-  return (
-    <div className="App">
-     
-    <FormComponent/>
+import Home from './Components/Home'
+export default class App extends Component{
 
-    </div>
-  );
+  constructor(){
+    super();
+    this.state = {
+      data: [
+        {
+          id: 1,
+          firstName: "Sudhakar",
+          age: 23,
+          qualification: "B.Tech",
+          
+          address:[
+            {
+              City:"Chennai",
+              State:"Tamil Nadu"
+            }
+          ]
+          
+        },
+        {
+          id: 2,
+          firstName: "Abirami",
+          age: 23,
+          qualification: "B.E",
+          rating: 5,
+          address:[
+            {
+              City:"Chennai",
+              State:"Tamil Nadu"
+            }
+          ]
+        },
+        
+      ],
+      
+    };
+
+  }
+
+  onSubmit = (model) => {
+      alert("hi")
+  }
+  render(){
+
+  
+    return (
+      <div className="App">
+       
+      <Home
+       jsonData={this.state.data}
+      
+      />
+  
+      </div>
+    );
+  }
+  
 }
 
-export default App;
+
